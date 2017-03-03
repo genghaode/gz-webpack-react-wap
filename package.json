@@ -1,0 +1,67 @@
+{
+  "name": "gz-webpack-react-wap",
+  "version": "1.0.0",
+  "description": "react worker",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --config conf/webpack.dev.config.js",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --progress --colors --config conf/webpack.prod.config.js",
+    "clean": "rm -rf public/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/genghaode/gz-webpack-react.git"
+  },
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "gengzhuo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/genghaode/gz-webpack-react/issues"
+  },
+  "homepage": "https://github.com/genghaode/gz-webpack-react#readme",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-import": "^1.1.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-es2016": "^6.22.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-react-optimize": "^1.0.1",
+    "browser-sync": "^2.18.8",
+    "browser-sync-webpack-plugin": "^1.1.4",
+    "connect-history-api-fallback": "^1.3.0",
+    "copy-webpack-plugin": "^4.0.1",
+    "cross-env": "^3.1.4",
+    "css-loader": "^0.26.2",
+    "eventsource-polyfill": "^0.9.6",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "file-loader": "^0.10.1",
+    "html-webpack-plugin": "^2.28.0",
+    "mockjs": "^1.0.1-beta3",
+    "react-hot-loader": "^1.3.1",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-dev-server": "^2.4.1",
+    "webpack-hot-middleware": "^2.17.1"
+  },
+  "dependencies": {
+    "antd-mobile": "^1.0.1",
+    "axios": "^0.15.3",
+    "history": "^4.5.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router": "^3.0.2",
+    "react-router-redux": "^4.0.8",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.8.1",
+    "redux-thunk": "^2.2.0"
+  }
+}

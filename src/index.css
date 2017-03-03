@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.gTr,
+.gTrFixed {
+  display: table;
+  width: 100%;
+}
+
+.gTrFixed {
+  table-layout: fixed;
+}
+
+.gTd,
+.gTd100 {
+  display: table-cell;
+}
+
+.gTd100 {
+  width: 100%;
+}
+
+.gVertical {
+  vertical-align: middle;
+}
+
+.myH1 {
+  padding-left: 20px;
+  background: url("./assets/images/test.png");
+}

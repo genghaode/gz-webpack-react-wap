@@ -1,0 +1,2 @@
+export { fetchTest }
+from './fetchMethod'
