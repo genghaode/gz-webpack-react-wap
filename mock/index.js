@@ -16,3 +16,11 @@ Mock.mock(/\/api\/test/, {
     'id|+1': 0
   }]
 })
+
+Mock.mock(/\/api\/getBanner/, {
+  'myData|5': [{
+    'url': '',
+    'img': '@dataImage("540x260", "@name")',
+    'id|+1': 0
+  }]
+})

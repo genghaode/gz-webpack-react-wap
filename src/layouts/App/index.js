@@ -1,14 +1,12 @@
 import React, { Component } from 'react'
-import { Header } from '../Header'
-
+import { Header, Tab } from '../'
 
 export const App = (props) => {
   return (
     <div>
     	<Header />
     	{props.children}
-  		{props.home}
-  		{props.tab}
+  		<Tab />
   	</div>
   )
 }

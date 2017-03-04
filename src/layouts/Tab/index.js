@@ -1,41 +1,45 @@
 import React, { Component } from 'react'
 import { TabBar } from 'antd-mobile'
-import { browserHistory } from 'react-router'
+import { connect } from 'react-redux'
+import { pageConfig } from '../../routes'
 
 class _Tab extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      selected: 'home'
-    }
-  }
-
   render() {
+    const { pathname } = this.props
     return (
-      <TabBar unselectedTintColor="#949494" tintColor="#33A3F4" barTintColor="white" >
-	    	<TabBar.Item title="首页" key="首页" icon={<i className="iconfont icon-wxbzhuye"></i>} selectedIcon={<i className="iconfont icon-wxbzhuye"></i>} selected={this.state.selected === 'home'} onPress={ ()=> {
-	    			this.setState({selected: 'home'})
-	    			browserHistory.push('/')
+      <TabBar unselectedTintColor="#949494" tintColor="#33A3F4" barTintColor="white" hidden={pageConfig[pathname].tab}>
+	    	<TabBar.Item title="首页" key="首页" icon={<i className="iconfont icon-wxbzhuye"></i>} selectedIcon={<i className="iconfont icon-wxbzhuye"></i>} selected={pathname === '/'} onPress={ ()=> {
+	    			this._onPress('/')
 	    		}}
-	    	>
-	    		<div>1111</div>
-	    	</TabBar.Item>
-	    	<TabBar.Item title="分类" key="分类" icon={<i className="iconfont icon-all"></i>} selectedIcon={<i className="iconfont icon-all"></i>} selected={this.state.selected === 'all'} onPress={()=> {
-	    			this.setState({selected: 'all'})
-	    			browserHistory.push('/')
+	    	/>
+	    	<TabBar.Item title="分类" key="分类" icon={<i className="iconfont icon-all"></i>} selectedIcon={<i className="iconfont icon-all"></i>} selected={pathname === '/category'} onPress={()=> {
+	    			this._onPress('/category')
 	    		}}
-	    	>
-	    		<div>2222</div>
-	    	</TabBar.Item>
-	    	<TabBar.Item title="我的" key="我的" icon={<i className="iconfont icon-account"></i>} selectedIcon={<i className="iconfont icon-account"></i>} selected={this.state.selected === 'me'} onPress={()=> {
-	    			this.setState({selected: 'me'})
-	    			browserHistory.push('/user')
+	    	/>
+	    	<TabBar.Item title="我的" key="我的" icon={<i className="iconfont icon-account"></i>} selectedIcon={<i className="iconfont icon-account"></i>} selected={pathname === '/user'} onPress={()=> {
+	    			this._onPress('/user')
 	    		}}
-	    	>
-	    		<div>333</div>
-	    	</TabBar.Item>
+	    	/>
 	    </TabBar>
     )
   }
+  _onPress(path) {
+    this.context.router.push(path)
+  }
 }
-export const Tab = _Tab
+
+_Tab.contextTypes = {
+  router: React.PropTypes.object
+}
+
+export const Tab = connect(
+  (state) => {
+    return {
+      pathname: state.routing.locationBeforeTransitions.pathname
+    }
+  }, (dispatch) => {
+    return {
+
+    }
+  }
+)(_Tab)

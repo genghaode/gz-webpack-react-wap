@@ -1,2 +1,2 @@
-export { fetchTest }
+export { fetchTest, fetchBanner }
 from './fetchMethod'

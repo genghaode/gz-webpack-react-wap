@@ -1,8 +1,8 @@
 export { Home }
 from './Home'
-export { test1, test2 }
+export { bannerData }
 from './Home/reducer'
-export { addAction, minusAction }
+export { getBannerAction }
 from './Home/action'
 
 export { Category }

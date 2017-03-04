@@ -1,0 +1,13 @@
+.banner {
+  background-color: #fff;
+}
+
+.bannerItem {
+  display: inline-block;
+  width: 100%;
+}
+
+.bannerImg {
+  width: 100%;
+  vertical-align: top;
+}

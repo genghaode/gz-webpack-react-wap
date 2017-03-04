@@ -4,7 +4,7 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux'
 import { store } from '../redux/store'
 import { Home, Category, User } from '../containers'
-import { App, Tab } from '../layouts'
+import { App } from '../layouts'
 
 const history = syncHistoryWithStore(browserHistory, store)
 
@@ -13,12 +13,10 @@ export const Root = () => {
     <Provider store={store}>
 	    <Router history={history}>
 			  <Route path="/" component={App}>
-		    	<IndexRoute	components={{home: Home, tab: Tab}} />
+		    	<IndexRoute	component={Home} />
 			    <Route path="category" component={Category}>
-			    	<IndexRoute	component={Tab} />
 			    </Route>
 			    <Route path="user" component={User}>
-			    	<IndexRoute	component={Tab} />
 			    </Route>
 		    </Route>
 	  	</Router>

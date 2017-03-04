@@ -1,12 +1,9 @@
-import { fetchTest } from '../../utils'
+import { fetchTest, fetchBanner } from '../../utils'
 
-export const addAction = { type: 'add' }
-
-export const minusAction = () => {
+export const getBannerAction = () => {
   return (dispatch, getState) => {
-    fetchTest().then((res) => {
-      console.log(res)
-      return dispatch({ type: "minus" })
+    fetchBanner().then((res) => {
+      return dispatch({ type: "success", data: res.data.myData })
     }).catch((err) => {
       console.log(err)
     })

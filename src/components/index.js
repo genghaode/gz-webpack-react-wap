@@ -1,1 +1,2 @@
-
+export { Banner }
+from './Banner'
