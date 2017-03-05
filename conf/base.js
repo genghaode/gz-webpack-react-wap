@@ -4,6 +4,10 @@ var webpack = require('webpack'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   env = process.env.NODE_ENV.trim()
 
+const svgDirs = [
+  require.resolve('antd-mobile').replace(/warn\.js$/, '')
+]
+
 module.exports = {
   entry: {
     index: path.join(commonPath.srcPath, 'index.js'),
@@ -35,7 +39,12 @@ module.exports = {
       loader: 'url-loader?limit=819200'
     }, {
       test: /\.(woff|svg|eot|ttf)\??.*$/,
-      loader: 'url-loader?limit=819200&name=[path][name].[ext]'
+      loader: 'url-loader?limit=819200&name=[path][name].[ext]',
+      exclude: path.join(commonPath.rootPath, 'node_modules'),
+    }, {
+      test: /\.(svg)$/i,
+      loader: 'svg-sprite-loader',
+      include: svgDirs
     }]
   },
   plugins: [

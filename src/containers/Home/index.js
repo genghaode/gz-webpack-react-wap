@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { ActivityIndicator } from 'antd-mobile'
 import { getBannerAction } from '../'
 import { Banner } from '../../components'
+import './index.css'
 
 class _Home extends Component {
   componentWillmount() {
@@ -20,7 +21,7 @@ class _Home extends Component {
       />
     }
     return (
-      <div>
+      <div className="main">
         <Banner bannerData={bannerData} />
         Home
       </div>

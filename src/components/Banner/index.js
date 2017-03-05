@@ -7,21 +7,17 @@ export const Banner = (props) => {
   const { bannerData } = props
 
   return (
-    <div className="bannerWrap">
-      <div className="bannerBox">
-        <Carousel className="banner" autoplay infinite dots>
-         {
-            bannerData.map((item, index) => {
-              return (
-                <Link to={item.url} key={index} className="bannerItem">
-                  <img src={item.img} className="bannerImg" />
-                </Link>
-              )
-            })
-          }
-        </Carousel>
-      </div>
-    </div>
-
+    <Carousel className="banner" autoplay infinite dots >
+     {
+        bannerData.map((item, index) => {
+          return (
+            <Link to={item.url} className="bannerItem
+" key={index}>
+              <img src={item.img} className="bannerImg" />
+            </Link>
+          )
+        })
+      }
+    </Carousel>
   )
 }
