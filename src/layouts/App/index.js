@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Header, Tab } from '../'
+import { Header } from '../Header'
+import { Tab } from '../Tab'
 import './index.css'
 
 export const App = (props) => {

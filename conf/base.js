@@ -1,6 +1,7 @@
 var webpack = require('webpack'),
   path = require('path'),
   commonPath = require('./commonPath'),
+  CopyWebpackPlugin = require('copy-webpack-plugin'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
   env = process.env.NODE_ENV.trim()
 
@@ -54,7 +55,14 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       __DEV__: env === 'development',
-      __PROD__: env === 'production'
-    })
+      __PROD__: env === 'production',
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
+    }),
+    new CopyWebpackPlugin([
+      { from: 'src/assets', to: 'assets' },
+      { context: commonPath.rootPath, from: 'static/*', ignore: ['*.md'] }
+    ])
   ]
 }

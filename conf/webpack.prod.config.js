@@ -1,6 +1,5 @@
 var webpack = require('webpack'),
   path = require('path'),
-  CopyWebpackPlugin = require('copy-webpack-plugin'),
   ExtractTextWebpackPlugin = require('extract-text-webpack-plugin'),
   commonPath = require('./commonPath'),
   config = require('./base')
@@ -22,15 +21,7 @@ config.module.rules.push({
 config.plugins[0].options.minify = { removeComments: true, collapseWhitespace: true }
 
 config.plugins.push(
-  new CopyWebpackPlugin([
-    { from: 'src/assets', to: 'assets' },
-    { context: commonPath.rootPath, from: 'static/*', ignore: ['*.md'] }
-  ]),
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
-    }
-  }),
+  new webpack.optimize.UglifyJsPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
     names: ['vendor']
   }),
