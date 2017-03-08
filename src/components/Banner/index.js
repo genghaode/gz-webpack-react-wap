@@ -6,18 +6,20 @@ import './index.css'
 export const Banner = (props) => {
   const { bannerData } = props
 
+
   return (
-    <Carousel className="banner" autoplay infinite dots >
-     {
+
+    <Carousel style={{height: window.innerWidth*0.48}} className="banner" autoplay infinite dots>
+   {
         bannerData.map((item, index) => {
           return (
-            <Link to={item.url} className="bannerItem
-" key={index}>
+            <Link to={item.url} className="bannerItem" key={index}>
               <img src={item.img} className="bannerImg" />
             </Link>
           )
         })
-      }
+      }    
+    
     </Carousel>
   )
 }

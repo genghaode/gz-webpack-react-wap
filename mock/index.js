@@ -3,7 +3,7 @@ import Mock from 'mockjs'
 const Random = Mock.Random
 
 Mock.setup({
-  timeout: '2000-5000'
+  timeout: '1000-2000'
 })
 
 Mock.mock(/\/api\/test/, {
@@ -22,5 +22,16 @@ Mock.mock(/\/api\/getBanner/, {
     'url': '',
     'img': '@dataImage("540x260", "@name")',
     'id|+1': 0
+  }]
+})
+
+Mock.mock(/\/api\/getItemList/, {
+  "myData|10": [{
+    'title': '@ctitle',
+    'fowllerNum|0-10000': 10,
+    'img': '@dataImage("80x80", "@name")',
+    'time': '@datetime()',
+    'id|+1': 0,
+    'fowllerFlag|1': true
   }]
 })

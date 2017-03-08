@@ -1,9 +1,7 @@
 export { Home }
 from './Home'
-export { bannerData }
+export { bannerData, itemListData }
 from './Home/reducer'
-export { getBannerAction }
-from './Home/action'
 
 export { Category }
 from './Category'

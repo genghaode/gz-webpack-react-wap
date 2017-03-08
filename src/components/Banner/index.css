@@ -11,3 +11,8 @@
   width: 100%;
   vertical-align: top;
 }
+
+.slider-frame,
+.slider-list {
+  height: 100%!important;
+}

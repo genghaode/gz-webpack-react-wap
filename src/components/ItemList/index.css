@@ -1,0 +1,64 @@
+.itemListView {
+  margin: .2rem 0 0;
+}
+
+.itemRowWrap {
+  padding: .2rem;
+  background-color: white;
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.am-list-body,
+.am-list-body:after {
+  border: none!important;
+}
+
+.itemRowImgWrap,
+.itemRowInfoWrap {
+  display: table-cell;
+}
+
+.itemRowInfoWrap {
+  width: 100%;
+  vertical-align: middle;
+  padding-left: .2rem;
+}
+
+.itemRowInfo {
+  display: table;
+  padding-top: .2rem;
+  color: #666;
+}
+
+.itemRowTitle {
+  font-weight: normal;
+}
+
+.itemRowfowllerNum,
+.itemRowTime {
+  display: table-cell;
+  white-space: nowrap;
+}
+
+.itemRowTime {
+  width: 100%;
+}
+
+.itemRowImg {
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: top;
+}
+
+.itemRowSeparator {
+  background-color: #F5F5F9;
+  height: .2rem;
+}
+
+.itemListFooter {
+  padding-bottom: 1rem;
+  margin: 0 auto;
+  width: 100px;
+}

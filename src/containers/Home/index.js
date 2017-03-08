@@ -1,19 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { ActivityIndicator } from 'antd-mobile'
-import { getBannerAction } from '../'
-import { Banner } from '../../components'
+import { getBannerAction, getItemListLoadAction } from './action'
+import { Banner, ItemList } from '../../components'
 import './index.css'
 
 class _Home extends Component {
-  componentWillmount() {
-    if (!this.props.bannerData.length) {
-      this.props.getBannerData()
+  constructor(props) {
+    super(props)
+
+    // 数据初始化
+    if (!props.bannerData.length) {
+      props.getBannerData()
+    }
+    if (props.itemListData.status != 'nomore' && !props.itemListData.data.length) {
+      props.getItemListLoadData()
     }
   }
   render() {
-    const { bannerData } = this.props
-    if (!bannerData.length) {
+
+    const { bannerData, itemListData, getItemListLoadData } = this.props
+    if (!bannerData.length || (itemListData.status != 'nomore' && !itemListData.data.length)) {
       return <ActivityIndicator
         animating="false"
         toast="true"
@@ -23,7 +30,7 @@ class _Home extends Component {
     return (
       <div className="main">
         <Banner bannerData={bannerData} />
-        Home
+        <ItemList itemListData={itemListData} getItemListLoadData={getItemListLoadData} />
       </div>
     )
   }
@@ -32,11 +39,13 @@ class _Home extends Component {
 export const Home = connect(
   (state) => {
     return {
-      bannerData: state.bannerData
+      bannerData: state.bannerData,
+      itemListData: state.itemListData
     }
   }, (dispatch) => {
     return {
-      getBannerData: dispatch(getBannerAction())
+      getBannerData: () => dispatch(getBannerAction()),
+      getItemListLoadData: () => dispatch(getItemListLoadAction())
     }
   }
 )(_Home)
