@@ -1,43 +1,44 @@
 import React, { Component } from 'react'
 import { List, WhiteSpace, Button } from 'antd-mobile'
 import './index.css'
+const Item = List.Item
 
 class _UserList extends Component {
   render() {
     return (
       <div>
       	<WhiteSpace />
-      	<div className="loginBtnWrap" hidden={this.props.loginStatus}>
+      	<div className="loginBtnWrap" hidden={this.props.loginStatus != '1'? false:true}>
 	      	<Button type="primary" onClick={() => this._onClick('/login')}>登录</Button>
       	</div>
       	<WhiteSpace />
 				<List>
-				  <List.Item 
+				  <Item 
 				    arrow="horizontal"
 				    thumb={<i className="iconfont icon-settings"></i>}
 				    onClick={()=>this._onClick('/user/settings')}
 				  >
 				    设置
-				  </List.Item>
-				  <List.Item 
+				  </Item>
+				  <Item
 				    arrow="horizontal"
 				    thumb={<i className="iconfont icon-service"></i>}
 				    onClick={()=>this._onClick('/user/service')}
 				  >
 				    客服
-				  </List.Item>
+				  </Item>
 				</List>
 				<WhiteSpace />
 				<List 
 				  renderFooter={() => <div className="userListFooter">版本号</div>}
 				>
-				  <List.Item 
+				  <Item
 				    arrow="horizontal"
 				    thumb={<i className="iconfont icon-favor"></i>}
-				    onClick={()=>{return this.props.loginStatus ? this._onClick('/user/favor'):this._onClick('/login')}}
+				    onClick={()=>{return this.props.loginStatus != '1'? this._onClick('/login'):this._onClick('/user/favor')}}
 				  >
 				    我的收藏
-				  </List.Item>
+				  </Item>
 				</List>
     	</div>
     )

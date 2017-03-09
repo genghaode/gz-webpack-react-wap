@@ -14,7 +14,7 @@ export const getItemListLoadAction = () => {
   return (dispatch, getState) => {
     fetchItemList(getState().itemListData.pageNum).then((res) => {
       // 根据请求回来的值，判断是否还有数据需要加载，这里现在随机生成的true或false
-      if (res.data.myData[0].fowllerFlag) {
+      if (!res.data.status) {
         return dispatch({ type: "itemListNomore" })
       } else {
         return dispatch({ type: "itemListLoad", data: res.data.myData })

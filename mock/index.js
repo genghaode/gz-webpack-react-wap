@@ -31,9 +31,9 @@ Mock.mock(/\/api\/getItemList/, {
     'fowllerNum|0-10000': 10,
     'img': '@dataImage("80x80", "@name")',
     'time': '@datetime()',
-    'id|+1': 0,
-    'fowllerFlag|1': true
-  }]
+    'id|+1': 0
+  }],
+  'status|1': true
 })
 
 Mock.mock(/\/api\/postLogin/, {

@@ -41,7 +41,7 @@ class _Login extends Component {
         this.setState({
           isloading: false
         })
-      })
+      }, { name: this.state.name, pwd: this.state.pwd })
     } else {
       this.setState({
         isloading: false
@@ -99,6 +99,6 @@ export const Login = connect((state) => {
   }
 }, (dispatch) => {
   return {
-    postLogin: (cb) => dispatch(postLoginAction(cb))
+    postLogin: (cb, obj) => dispatch(postLoginAction(cb, obj))
   }
 })(_Login)
