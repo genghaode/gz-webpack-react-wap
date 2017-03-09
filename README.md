@@ -2,7 +2,7 @@
 ## 功能
 - 解析jsx
 - 解析ES6
-- 编译完成自动打开浏览器，多端浏览
+- 编译完成自动打开浏览器，多端浏览，多端浏览需要将配置文件中的ip地址改为本机ip地址
 - 组件级热更新
 - 分离CSS文件
 - 代码压缩
@@ -11,7 +11,9 @@
 - 支持react-router
 - 支持redux
 - 引入ant.design mobile
-- 示例增加头部，TabBar，首页banner，首页下拉加载列表，登录功能，服务器环境下需要配置好请求数据的接口
+- 示例增加头部，TabBar，首页banner，首页下拉加载列表，登录功能
+- 服务器环境下需要配置好接口(/api/getBanner,/api/getItemList,/api/postLogin)
+
 ## 使用
 - 下载
 ```
