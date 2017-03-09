@@ -27,7 +27,7 @@ config.plugins.push(
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
   new BrowserSyncPlugin({
-    host: '127.0.0.1',
+    host: '192.168.1.50',
     port: 9090,
     proxy: 'http://127.0.0.1:9000/',
     logConnections: false,

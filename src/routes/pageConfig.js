@@ -32,5 +32,10 @@ export const pageConfig = {
     'title': '我的收藏头部',
     'tab': true,
     'headerType': 2
+  },
+  '/login': {
+    'title': '登录头部',
+    'tab': true,
+    'headerType': 2
   }
 }

@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import { List, WhiteSpace } from 'antd-mobile'
+import { List, WhiteSpace, Button } from 'antd-mobile'
 import './index.css'
 
 class _UserList extends Component {
   render() {
     return (
       <div>
-      	<WhiteSpace size="xl" />
+      	<WhiteSpace />
+      	<div className="loginBtnWrap" hidden={this.props.loginStatus}>
+	      	<Button type="primary" onClick={() => this._onClick('/login')}>登录</Button>
+      	</div>
+      	<WhiteSpace />
 				<List>
 				  <List.Item 
 				    arrow="horizontal"
@@ -23,14 +27,14 @@ class _UserList extends Component {
 				    客服
 				  </List.Item>
 				</List>
-				<WhiteSpace size="xl" />
+				<WhiteSpace />
 				<List 
 				  renderFooter={() => <div className="userListFooter">版本号</div>}
 				>
 				  <List.Item 
 				    arrow="horizontal"
 				    thumb={<i className="iconfont icon-favor"></i>}
-				    onClick={()=>this._onClick('/user/favor')}
+				    onClick={()=>{return this.props.loginStatus ? this._onClick('/user/favor'):this._onClick('/login')}}
 				  >
 				    我的收藏
 				  </List.Item>

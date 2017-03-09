@@ -35,3 +35,9 @@ Mock.mock(/\/api\/getItemList/, {
     'fowllerFlag|1': true
   }]
 })
+
+Mock.mock(/\/api\/postLogin/, {
+  "myData": {
+    'status|1': true
+  }
+})

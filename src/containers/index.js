@@ -14,3 +14,8 @@ export { Service }
 from './User/Service'
 export { Settings }
 from './User/Settings'
+
+export { Login }
+from './Login'
+export { loginStatus }
+from './Login/reducer'

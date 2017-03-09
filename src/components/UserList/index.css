@@ -2,3 +2,7 @@
 .userListFooter {
   text-align: center;
 }
+
+.loginBtnWrap {
+  padding: 0 .3rem;
+}
