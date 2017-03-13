@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --config conf/webpack.dev.config.js",
+    "build:dev": "npm run clean && cross-env NODE_ENV=production-dev webpack --progress --colors --config conf/webpack.prod.config.js",
     "build": "npm run clean && cross-env NODE_ENV=production webpack --progress --colors --config conf/webpack.prod.config.js",
     "clean": "rm -rf public/*"
   },

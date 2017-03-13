@@ -14,5 +14,7 @@ if (__DEV__) {
 if (__PROD__) {
   console.log('生产环境')
 }
-
+if (__PROD_DEV__) {
+  console.log('服务器端开发环境')
+}
 render(<Root />, root)
