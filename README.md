@@ -28,3 +28,7 @@ $ npm run dev
 ```
 $ npm run build
 ```
+- 服务器端开发环境
+```
+$ npm run build:dev
+```

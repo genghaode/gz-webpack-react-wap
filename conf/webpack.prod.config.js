@@ -18,8 +18,6 @@ config.module.rules.push({
   })
 })
 
-config.plugins[0].options.minify = { removeComments: true, collapseWhitespace: true }
-
 config.plugins.push(
   new webpack.optimize.UglifyJsPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
